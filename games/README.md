@@ -135,7 +135,149 @@ Common frameworks for LUDOLOGY:
   - story
   - techology
 
-# STOPPED AT PAGE 64 - MDA: Mechanics, Dynamics, and Aesthetics
+In the context of MDA (as these same words may be defined differently in other frameworks):
+- Mechanics: The particular components of the game at the level of data representation and algorithms
+- Dynamics: The runtime behaviour of the mechanics acting on player inputs and each other's outputs over time
+- Aesthetics: The desirable emotional response evoked in the player when she interacts with the game system
+
+Designer and Player Views of a Game
+- Designer:
+  - first, consider games in terms of the aesthetics, the emotions that the designer wants players to feel while playing the game
+  - then work backward to the kind of dynamic play that would prompt those feelings
+  - then finally to the gameplay mechanics that will create those dynamics
+- Player:
+  - first experience the mechanics (e.g. reading the written rules for the game)
+  - then experiencing the dynamics by playing the game
+  - then finally experiencing the aesthetics that were initially envisioned by the designer
+
+```
+            Designers
+    <-- <-- <-- <-- <-- <--o
+MECHANICS - DYNAMICS - AESTHETICS
+    o--> --> --> --> --> -->
+             Players
+```
+
+E.g. children's games
+- often designed to make each player feel like they are doing well and have a chance to win up until the very end.
+  - players must feel that the end of the game is not inevitable and must be able to hope for good luck throughout the game
+
+E.g. in the original Snake and Ladders (or Moksha Patamu), the desired aesthetic is for the players to experience hope, reversal of fortune, and excitement in a game in which the players never make any choice
+- the *mechanic* is the inclusion of the snakes and ladders
+- the *dynamic* is the intersection of the two where the act of the players encountering the mechanics leads to:
+- the *aesthetic* feelings of hope and excitement
+
+Where MDA seeks to help both designers and critics better understand and discuss games, FDD help students in more effectively design games
+
+In the context of the FDD framework:
+- Formal elements - provide structure of a game; include things like
+  - rules
+  - resources
+  - boundaries
+- Dramatic elements - the story and narrative of the game, including the premise. These
+  - tie the game together,
+  - help players understand the rules, and
+  - encourage the player to become emotionally invested in the game
+- Dynamic elements - the game in motion; After players turn the rules into actual gameplay, the game has moved into dynamic elements. These include things like
+  - strategy
+  - behaviour
+  - relationships between game entities
+
+FORMAL ELEMENTS
+- Seven are proposed that differentiate games from other forms of media:
+  - Player interaction pattern: how the players interact
+    - single-player
+    - one-on-one
+    - team-vs-team
+    - multilateral (multiple vs each other)
+    - cooperative
+    - multiple players each against the same system
+  - Objectives
+    - what are the players trying to achieve?
+    - when has someone won?
+  - Rules: These limit the players' actions by telling them what they may or may not do in the game. These can be
+    - explicitly written
+    - implicitly understood 
+  - Procedures:
+    - the types of actions taken by the players in the game
+  - Resources: elements that have value in the game
+    - money
+    - health
+    - items
+    - properties
+  - Boundaries:
+    - where does the game end and reality begin?
+  - Outcome: how did the game end? There are
+    - final outcome e.g. who wins in a game of chess
+    - incremental outcome e.g. when a player defeats an enemy and levels up
+- Can be see in a way such that when one of these is removed, the game ceases to be a game
+
+DRAMATIC ELEMENTS
+- help make the rules and resources more understandable to players and can give players greater emotional investment in the game
+- three types are presented:
+  - Premise: the basic story of the game world
+    - in Monopoly: each of the players is a real-estate developer trying to get a monopoly on corporate real estate in Atlantic City, New Jersey
+    - in Donkey Kong: the player is trying to single-handedly save Pauline from a gorilla that has kidnapped her.
+  - Character: individuals around whom the story revolves. Designers must choose whether the protagonist will act as:
+    - an avatar for the player, conveying the emotions, desires and intentions of the player into the game world
+    - as a role that the player must take on, so that the player acts out the wishes of the game character
+      - this latter one is more common and easier to implement
+  - Story: the plot of the game, which encompasses the actual narrative that takes place through the course of the game
+    - the **Premise** sets the stage on which the story takes place.
+
+DYNAMIC ELEMENTS
+- are the elements that occur only when the game is being played. The core CONCEPTS of these dynamic elements are:
+  - Emergence:
+    - Simple rules lead to complex and unpredictable behaviour
+      - It is one of the designer's most important jobs to attempt to understand the emergent implications of the rules in the game
+  - Emergent narrative:
+    - FDD model recognizes that narrative can also be dynamic (as opposed to only the behaviour of mechanics)
+    - numerous narratives can emerge from the gameplay itself, where e.g. players are put in extra-normal situations leading to interesting stories
+  - Playtesting is the only way to understand dynamics
+    - Experienced game designers can often make better predictions about dynamic behaviour and emergence than novice designers
+      - though no one understands exactly how the dynamics of a game will play out without playtesting them.
+
+THE ELEMENTAL TETRAD - four basic elements of games:
+- Mechanics - the rules for interaction between the player and the game,
+  - containing things like:
+    - rules
+    - objectives
+    - other formal elements
+  - different from mechanics presented by MDA in the sense that in this there is differentiation between game mechanics and the underlying technology that enables them
+- Aesthetics - describes how the game is percieved by vision, sound, smell, taste and touch.
+  - covers everything from the soundtrack of the game to the character models, packaging and cover art.
+- Technology - covers all the underlying technology that makes the game work
+  - most obviously refers to things such as console hardware, computer software, rendering pipelines, etc.
+  - also covers technological elements in board games e.g.
+    - type and number of dice that are chosen
+    - whether dice or a a deck of cards are used as the randomizer
+    - various stats and tables used to determine the outcomes of actions.
+- Story - covers all that is covered by ***Dramatic Elements*** in FDD including both premise and character
+
+Four elements interrelating with each other:
+
+```
+        Aesthetics
+       /     |    \
+Mechanics----+----Story
+       \     |    /
+        Technology
+```
+
+The Elemental Tetrad touches on static elements rather than dynamic play of the game
+
+SUMMARY - PART 1 CHAPTER 2
+- MDA demonstrates: Players and designers approach games by different directions; Designers can be more effective by learning to see their games from the players' perspective
+- FDD breaks game design into specific components which can individually considered and improved
+- ELEMENTAL TRIAD separates the basic elements of a game into the sections that are generally assigned to various teams e.g.:
+  - game designers handle mechanics
+  - artists handle aesthetics
+  - writers handle story
+  - programmers handle technology
+
+The Layered Tetrad combines and expands on the ideas presented in all the above frameworks
+
+# PAUSED ON PAGE 76 - PART 1 CHAPTER 3 BEGINNING
 
 #### Other Books
 
