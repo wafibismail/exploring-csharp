@@ -61,7 +61,51 @@ Additionally:
   - in person rather than with digital prototypes
     - This highlights the importance of paper prototypes, even when designing digital ones
 
-# PAUSED AT PAGE 51 I.E. AT BERNARD SUITS' DEFINITION OF A "GAME"
+GAME DEFINITION 1: ACCORDING TO BERNARD SUITE:
+- Short: A game is a voluntary attempt to overcome unnecessary obstacles
+- Lengthier: To play a game is to attempt to achieve a specific state of affairs, using only means permitted by rules, where the rules prohibit use of more efficient in favor of less efficient means, and where the rules are accepted just because they make possible such activity.
+
+GAME DEFINITION 2: ACCORDING TO SID MEIER:
+- Short: A game is a series of interesting decisions
+- Further: An interesting decision is generally one where:
+  - The player has multiple valid options from which to choose
+  - Each option has both positive and negative potential consequences
+  - The outcome of each option is predictable but not guaranteed
+
+GAME DEFINITION 3: ACCORDING TO TRACY FULLERTON
+- Short: A game is a closed, formal system that engages players in a structured conflict and resolves its uncertainty in an unequal outcome
+- Further: This definition is also a list of elements that designers can modify in their games:
+  - Formal elements - which differentiate a game from other types of media
+    - i.e. rules, procedures, players, resources, objectives, boundaries, conflict & outcome.
+  - (Dynamic) systems - Methods of interactions that evolve as the game is played
+  - Conflict structure - The ways in which players interact with each other
+  - Uncertainty - The interaction between randomness, determinism, and player strategy
+  - Unequal outcome - How does the game end? Do players win, lose, or something else?
+
+GAME DEFINITION 4: ACCORDING TO JESSE SCHELL
+- Short: A game is a problem-solving activity, approached with a playful attitude.
+- Further:
+  - It is the playful attitude of the player that makes something a game.
+  - It is because of their playful attitude that players will happily follow the rules of a game even though there might be an easier way to achieve the stated goal of the game (e.g. hacking? not stated in the book, it just popped up in my head)
+- Therefore another design goal is to encourage a playful attitude. Design the game to encourage players to enjoy the limitations placed on them by the rules, i.e. balance the game well.
+
+GAME DEFINITION 5: ACCORDING TO KEITH BURGUN
+- Short: A game is a system of rules in which agents compete by making ambiguous, endogenously meaningful decisions
+- Core: Is that - the player is making choices and that those choices are both ambiguous (the player doesn't know exactly what the outcome of the choice will be) and endogenously meaningful (the choice is meaningful because it has a noticeable effect upon the game system)
+
+Notes not taken, but worth going back to as it makes clear why I'm writing the next question:
+- Why Care About the Definition of Game? (Page 56)
+
+Reasons for playing games:
+- Humans desire conflict
+- Humans desire the experience of being someone else
+- Humans desire excitement
+
+The point brought up in the book as to why considering these reasons is significant is that doing so provides a basis for understanding both their importance in society and the positive and negative effects that games can have on the people who play them.
+
+As a game designer, understanding these needs and respecting their power (e.g. them being potentially addictive, on the negative side) can be incredibly useful.
+
+# STOPPED AT PAGE 57: THE NEBULOUS NATURE OF DEFINITIONS
 
 #### Other Books
 
