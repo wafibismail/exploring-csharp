@@ -36,7 +36,8 @@ Game design is merely a process:
 - Design new rules that may move the feel of the game in the desired direction
 - Repeat until satisfied
 
-I.e., ITERATIVE DESIGN
+I.e., ITERATIVE DESIGN <br>
+<br>
 
 WATCH OUT FOR PLAYTESTING FLUKES
 - The occurence of an unlikely event / external factor e.g. a weird shuffle may cause a single play to feel really different from the others. Be sure to play through the game multiple times so as to avoid making rule changes based on a fluke.
@@ -98,14 +99,43 @@ Notes not taken, but worth going back to as it makes clear why I'm writing the n
 
 Reasons for playing games:
 - Humans desire conflict
+  - The rules that limit behaviour are there precisely because the challenge of those limitations is appealing to players
 - Humans desire the experience of being someone else
 - Humans desire excitement
+  - In addition, what separates games from other forms of media is that the player is actively taking part in the excitement rather than vicariously absorbing it
 
-The point brought up in the book as to why considering these reasons is significant is that doing so provides a basis for understanding both their importance in society and the positive and negative effects that games can have on the people who play them.
+The point brought up in the book as to why considering these reasons is significant is that doing so provides a basis for understanding both
+- their importance in society and
+- the positive and negative effects that games can have on the people who play them.
 
 As a game designer, understanding these needs and respecting their power (e.g. them being potentially addictive, on the negative side) can be incredibly useful.
 
-# STOPPED AT PAGE 57: THE NEBULOUS NATURE OF DEFINITIONS
+The word "game" is used differently depending who uses it e.g. who the player is, and the word is constantly evolving
+
+How is understand definitions critical?
+- Definitions help us understand what people expect from our games
+  - especially when working on a specific genre or towards a specific audience
+    - understanding how that audience defines the term can help us in crafting better games for them 
+- Definitions can lead to understanding not only
+  - the core of the defined concept, but also
+  - the periphery (which games fit the definition and which do not)
+- Definitions can help in speaking eloquently with others in the field
+
+LUDOLOGY - The study of games and game designs <br>
+<br>
+
+Common frameworks for LUDOLOGY:
+- MDA - Mechanics, Designs and Aesthetics
+  - This framework provides important points to consider about the difference between how designers and players approach games.
+- FDD - Formal, Dramatic and Dynamic Elements
+  - This framework framework focuses on concrete analytical tools to help designers make better games and push their ideas further
+- Elemental Tetrad - splits games into four core elements:
+  - mechanics
+  - aesthetics
+  - story
+  - techology
+
+# STOPPED AT PAGE 64 - MDA: Mechanics, Dynamics, and Aesthetics
 
 #### Other Books
 
