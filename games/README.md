@@ -28,7 +28,40 @@ After PLAYTESTs, ask:
 E.g. in BARTOK, the paper version:
 - ask players to write down their answers to these questions individually, then discuss as a group. This keeps the responses diverse, uninfluenced.
 
-# PAUSED AT PAGE 47 - MODIFYING THE RULES
+Game design is merely a process:
+- Incrementally MODIFY THE RULES
+  - changing very few things between each playtest
+- Playtest the game with the new rules
+- Analyze how the feel of the game is altered by the new rules
+- Design new rules that may move the feel of the game in the desired direction
+- Repeat until satisfied
+
+I.e., ITERATIVE DESIGN
+
+WATCH OUT FOR PLAYTESTING FLUKES
+- The occurence of an unlikely event / external factor e.g. a weird shuffle may cause a single play to feel really different from the others. Be sure to play through the game multiple times so as to avoid making rule changes based on a fluke.
+
+GAME FEEL
+- do you want it to be
+  - exciting?
+  - cutthroat?
+  - leisurely and slow?
+  - based more on strategy, or chance?
+- once there is a general idea of the desired feel, come up with additional rules that can push the feel of the game in that direction
+
+Tips regarding designing new rules:
+- Change only one thing in between each playtest
+  - so then it is easier to pinpoint which changes influence a certain effect towards a feel
+- The bigger the change, the more frequent the tests need to be to ensure the subsequent change decision is not based on flukes
+  - better to keep the changes subtle such that one or two plays can say alot of how each change affects the feel
+- Change a number (no matter how small) and you change the experience
+
+Additionally:
+- adding new rules can be easier when the playtests are done with friends
+  - in person rather than with digital prototypes
+    - This highlights the importance of paper prototypes, even when designing digital ones
+
+# PAUSED AT PAGE 51 I.E. AT BERNARD SUITS' DEFINITION OF A "GAME"
 
 #### Other Books
 
