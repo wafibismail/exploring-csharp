@@ -277,7 +277,7 @@ SUMMARY - PART 1 CHAPTER 2
 
 The Layered Tetrad combines and expands on the ideas presented in all the above frameworks
 
-# PAUSED ON PAGE 405 - Important C# Variable Types
+# PAUSED ON PAGE 454 - COLLECTIONS IN C#
 
 #### Other Books
 
