@@ -294,9 +294,18 @@ COMPONENT ORIENTED DESIGN:
   - However also requires a decent amount of forethought, thus may not be suitable in all situations.
 - Example in Boid folder
 
-Need to look up Lerp()
+Need to look up Lerp()<br>
+<br>
 
-# PAUSED ON PAGE 564 - Prototype I - Apple Picker
+Paper prototypes help in these:
+- Test, reject, and/or refine game mechanics and rules quickly
+- Explore the dynamic behavior of a game and understand the emergent possibilities created by the rules
+- Ascertain whether rules and gameplay elements are easily understood by players
+- Understand the emotional response that players have to the game
+
+Digital prototypes adds the ability to see how the game feels
+
+# PAUSED ON PAGE 608 - PROTOTYPE 2 - MISSION DEMOLITION
 
 #### Other Books
 
