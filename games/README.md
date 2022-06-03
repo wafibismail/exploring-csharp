@@ -294,7 +294,9 @@ COMPONENT ORIENTED DESIGN:
   - However also requires a decent amount of forethought, thus may not be suitable in all situations.
 - Example in Boid folder
 
-# PAUSED ON PAGE 546 - Attractor script
+Need to look up Lerp()
+
+# PAUSED ON PAGE 564 - Prototype I - Apple Picker
 
 #### Other Books
 

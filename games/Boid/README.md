@@ -17,4 +17,9 @@
   - to be attached to the Main Camera.
   - causes the camera to turn and look at the Attractor each frame.
 
-By following an expansion of Object-Oriented Programming known as Component-Oriented Design, each resulting script (though being more) would be no larger than necessary.
+By following an expansion of Object-Oriented Programming known as Component-Oriented Design, each resulting script (though being more) would be no larger than necessary.<br>
+<br>
+
+Worth looking up or returning to:
+- Lerp() - what makes it work
+- Other versions of Boids to try out @ page 561
