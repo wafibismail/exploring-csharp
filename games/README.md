@@ -275,9 +275,26 @@ SUMMARY - PART 1 CHAPTER 2
   - writers handle story
   - programmers handle technology
 
-The Layered Tetrad combines and expands on the ideas presented in all the above frameworks
+The Layered Tetrad combines and expands on the ideas presented in all the above frameworks <br>
+_______________________________________<br>
+<br>
 
-# PAUSED ON PAGE 537 - OBJECT ORIENTED THINKING
+COMPONENT ORIENTED DESIGN:
+- Component Pattern:
+  - Core idea: to group closely related functions and data into a single class while at the same time keeping each class as small and focused as possible.
+  - Is what each GameObject in Unity is based on, e.g., the components:
+    - *Transform* handles position, rotation, scale and hierarchy.
+    - *Rigidbody* handles motion and physics
+    - *Colliders* handle actual collision and the shape of the collision volume
+  - Gives us smaller, shorter classes to work with, meaning easier to
+    - code
+    - share with others
+    - reuse
+    - debug
+  - However also requires a decent amount of forethought, thus may not be suitable in all situations.
+- Example in Boid folder
+
+# PAUSED ON PAGE 546 - Attractor script
 
 #### Other Books
 
