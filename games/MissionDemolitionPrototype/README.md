@@ -39,4 +39,12 @@ Sleep Threshold
 - Adjust at *Edit&gt;Project Settings&gt;Physics*
 - E.g. 0.02 = 2cm
 
-# PAUSED AT PAGE 649 - ADDING MORE CASTLES
+Next steps:
+- Tweak colors
+- Use PlayerPrefs
+- Add variety in castle materials
+- Show lines for more than just most recent path
+- Make rubber band from a Line Renderer
+- Implement parllax scrolling on the background clouds
+  - also add more elements e.g. mountains
+- Etc..

@@ -87,6 +87,9 @@ public class Slingshot : MonoBehaviour {
 			// Open the field projectile to be filled by another instance
 			FollowCam.POI = projectile;
 			projectile = null;
+			MissionDemolition.ShotFired ();
+			ProjectileLine.S.poi = projectile;
+
 		}
 	}
 }

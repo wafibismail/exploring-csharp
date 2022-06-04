@@ -305,7 +305,7 @@ Paper prototypes help in these:
 
 Digital prototypes adds the ability to see how the game feels
 
-# PAUSED ON PAGE 608 - PROTOTYPE 2 - MISSION DEMOLITION
+# PAUSED AT PAGE 663 - PROTOTYPE 3 - SPACE SHMUP
 
 #### Other Books
 
