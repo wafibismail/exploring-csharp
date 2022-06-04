@@ -2,6 +2,8 @@
 using UnityEngine;
 
 public class Slingshot : MonoBehaviour {
+	static private Slingshot S;
+
 	// Code in [] is a compiler attribute which gives either
 	//   Unity or the compiler a specific instruction.
 	// In this case, it instructs unity to create a header
@@ -9,7 +11,7 @@ public class Slingshot : MonoBehaviour {
 
 	[Header("Set in Inspector")]
 	public GameObject prefabProjectile;
-	public float velocityMult = 8f;
+	public float velocityMult = 12f;
 
 	[Header("Set Dynamically")]
 	public GameObject launchPoint;
@@ -18,7 +20,16 @@ public class Slingshot : MonoBehaviour {
 	public bool aimingMode;
 	private Rigidbody projectileRigidbody;
 
+	static public Vector3 LAUNCH_POS {
+		get {
+			if (S == null)
+				return Vector3.zero;
+			return S.launchPos;
+		}
+	}
+
 	void Awake() {
+		S = this;
 		Transform launchPointTrans = transform.Find ("LaunchPoint");
 		launchPoint = launchPointTrans.gameObject;
 		// Tells the game whether to ignore them

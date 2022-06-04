@@ -22,16 +22,21 @@ Local vs. world coordinates & scales
   - *lossyScale*: estimated scale in world coordinates
     - there is no *scale*
 
-Also in this project:
-- Organizing the Project pane.
-  - See the how neat the main MissionDemolitionPrototype folder is compared to e.g. Boid, ApplePickerPrototype, etc.
-  - The Project pane corresponds to:
-    - the Assets folder on local storage, or
-    - the main MissionDemolitionPrototype folder in this repository
-  - Note the use of underscores and double underscore:
-    - __Scripts
-    - _Materials
-    - _Prefabs
-  - I commit only the scripts to keep this repository clean.
+Organizing the Project pane.
+- See the how neat the main MissionDemolitionPrototype folder is compared to e.g. Boid, ApplePickerPrototype, etc.
+- The Project pane corresponds to:
+  - the Assets folder on local storage, or
+  - the main MissionDemolitionPrototype folder in this repository
+- Note the use of underscores and double underscore:
+  - __Scripts
+  - _Materials
+  - _Prefabs
+- I commit only the scripts to keep this repository clean.
 
-# PAUSED AT 639 - MAKING WALLS AND SLABS
+Sleep Threshold
+- the amount of movement in a single physics engine frame that will cause a Rigidbody to continue to be simulated in the following frame.
+- if it goes lower than the threshold then the object "sleeps"
+- Adjust at *Edit&gt;Project Settings&gt;Physics*
+- E.g. 0.02 = 2cm
+
+# PAUSED AT PAGE 649 - ADDING MORE CASTLES
