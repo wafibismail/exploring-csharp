@@ -10,6 +10,7 @@ Directories hierarchy:
   - Main.cs
   - Projectile.cs
   - Shield.cs
+  - Utils.cs
   - Weapon.cs
 - _Materials:
   - Mat_Collar.mat
@@ -61,6 +62,9 @@ Function Delegates:
 
 Input.GetAxis("Jump")
 - is equal to 1 when the spacebar or jump button on a controller is pressed
+
+GetComponentsInChildren is somewhat a slow function that can take processing time and decrease performance.
+- As such, it is generally better to call it once and cache the result rather than calling it every frame
 
 To do / to check:
 - u curve function
