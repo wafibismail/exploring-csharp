@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Main : MonoBehaviour {
 	static public Main S; // A singleton for Main
+	static Dictionary<WeaponType, WeaponDefinition> WEAP_DICT;
 
 	[Header("Set in Inspector")]
 	public GameObject[] prefabEnemies; // Array of Enemy prefabs
 	public float enemySpawnPerSecond = 0.5f; // # Enemies/second
 	public float enemyDefaultPadding = 1.5f; // Padding for position
+	public WeaponDefinition[] weaponDefinitions;
 
 	private BoundsCheck bndCheck;
 
@@ -20,6 +22,12 @@ public class Main : MonoBehaviour {
 
 		// Invoke SpawnEnemy() once in 2 seconds (based on default values)
 		Invoke ("SpawnEnemy", 1f / enemySpawnPerSecond);
+
+		// A generic Dictionary with WeaponType as the key
+		WEAP_DICT = new	Dictionary<WeaponType, WeaponDefinition>();
+		foreach (WeaponDefinition def in weaponDefinitions) {
+			WEAP_DICT [def.type] = def;
+		}
 	}
 
 	public void SpawnEnemy() {
@@ -54,5 +62,24 @@ public class Main : MonoBehaviour {
 
 	public void Restart() {
 		SceneManager.LoadScene ("_Scene_0");
+	}
+
+	/// <summary>
+	/// Static function that gets a WeaponDefinition from the WEAP_DICT static
+	/// protected field of the Main class.
+	/// </summary>
+	/// <returns>The WeaponDefinition or, if there is no WeaponDefinition with
+	/// the WeaponType passed in, returns a new WeaponDefinition with a
+	/// WeaponType of none..</returns>
+	/// <param name="wt">The WeaponType of the desired WeaponDefinition</param>
+	static public WeaponDefinition GetWeaponDefinition( WeaponType wt) {
+		// Need to check if key exists in WEAP_DICT
+		// Attempting to retrieve a key that does not exist would throw an error
+		if (WEAP_DICT.ContainsKey (wt)) {
+			return (WEAP_DICT [wt]);
+		}
+		// This returns a WeaponDefinition with a type of WeaponType.none,
+		// which means it has failed to find the right WeaponDefinition
+		return (new WeaponDefinition ());
 	}
 }

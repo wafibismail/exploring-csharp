@@ -12,6 +12,7 @@ Directories hierarchy:
   - Shield.cs
   - Weapon.cs
 - _Materials:
+  - Mat_Collar.mat
   - Mat_Projectile.mat
   - Mat_Shield.mat
   - PowerUp.psd
@@ -26,6 +27,7 @@ Directories hierarchy:
   - Enemy_3.prefab
   - Enemy_4.prefab
   - ProjectileHero.prefab 
+  - Weapon.prefab
 
 This is a continuation of the earlier Space SHMUP prototype. The author makes this distinction in his book as well. I thought there may be useful parts to refer to in the earlier version and thought that I would do it similarly too.
 - .
@@ -51,6 +53,14 @@ Bezier curve
 Need to associate various options together into a new kind of variable?
 - use an enum!
   - declare it/them between the class definition and the *using* statements in a C# script e.g. in Weapon.cs
+
+Function Delegates:
+- a function delegate can be thought of as a container for similar functions or methods that can all be called at once i.e. multicasting (can be called individually as regular functions as well)
+  - if the function returns a value, the value from the last function called is returned
+- if no function is attached to it, an error will be thrown on trying to call it. Check first that it is not null
+
+Input.GetAxis("Jump")
+- is equal to 1 when the spacebar or jump button on a controller is pressed
 
 To do / to check:
 - u curve function
