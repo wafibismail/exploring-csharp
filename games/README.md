@@ -305,7 +305,7 @@ Paper prototypes help in these:
 
 Digital prototypes adds the ability to see how the game feels
 
-# PAUSED AT PAGE 704 - SCRIPTING THE PROJECTILE IN SPACE SHMUP
+# PAUSED AT PAGE 720 - MODIFYING MAIN IN SHMUP PLUS
 
 #### Other Books
 
