@@ -305,7 +305,7 @@ Paper prototypes help in these:
 
 Digital prototypes adds the ability to see how the game feels
 
-# PAUSED AT PAGE 740 - POWERUPS AND WEAPON BOOSTS IN SHMUP PLUS
+# PAUSED AT PAGE 758 - SPLITTING ENEMY_4 IN SPACE SHMUP
 
 #### Other Books
 

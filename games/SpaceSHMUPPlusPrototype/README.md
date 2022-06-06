@@ -8,12 +8,14 @@ Directories hierarchy:
   - Enemy.cs
   - Hero.cs
   - Main.cs
+  - PowerUp.cs
   - Projectile.cs
   - Shield.cs
-  - Utils.cs
+  - Utils.cs	
   - Weapon.cs
 - _Materials:
   - Mat_Collar.mat
+  - Mat_PowerUp.mat
   - Mat_Projectile.mat
   - Mat_Shield.mat
   - PowerUp.psd
@@ -27,6 +29,7 @@ Directories hierarchy:
   - Enemy_2.prefab
   - Enemy_3.prefab
   - Enemy_4.prefab
+  - PowerUp.prefab 
   - ProjectileHero.prefab 
   - Weapon.prefab
 
@@ -66,9 +69,20 @@ Input.GetAxis("Jump")
 GetComponentsInChildren is somewhat a slow function that can take processing time and decrease performance.
 - As such, it is generally better to call it once and cache the result rather than calling it every frame
 
+*Script Execution Order* can be tweaked
+- Edit > Project > Settings > Script Execution Order
+- need to use for situations which would otherwise possibly cause race conditions
+  - e.g. Update() methods from two GameObjects modifying a shared variable
+
+Classes' responsibility for an activity
+- If fewer scripts are responsible for an activity, it is easier to debug when something goes wrong
+- E.g. let the Main singleton be responsible for instantiations, even instantiation of PowerUps that are dropped by Enemys
+
 To do / to check:
 - u curve function
 - Quaternion
 - Bezier curve function
+- Easing
 - Expand the game further e.g.
   - experimenting with the various WeaponDefinition fields/options
+- Apply appropriate colliders to each enemy type.
