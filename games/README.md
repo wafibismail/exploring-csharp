@@ -305,7 +305,7 @@ Paper prototypes help in these:
 
 Digital prototypes adds the ability to see how the game feels
 
-# PAUSED AT PAGE 758 - SPLITTING ENEMY_4 IN SPACE SHMUP
+# PAUSED AT PAGE 772 - START OF PROTOTYPE 4
 
 #### Other Books
 

@@ -9,6 +9,7 @@ Directories hierarchy:
   - Hero.cs
   - Main.cs
   - PowerUp.cs
+  - Parallax.cs
   - Projectile.cs
   - Shield.cs
   - Utils.cs	
@@ -18,6 +19,8 @@ Directories hierarchy:
   - Mat_PowerUp.mat
   - Mat_Projectile.mat
   - Mat_Shield.mat
+  - Mat_Starfield.mat
+  - Mat_Starfield_Transparent.mat
   - PowerUp.psd
   - Shields.psd
   - Space_Transparent.png
@@ -78,6 +81,9 @@ Classes' responsibility for an activity
 - If fewer scripts are responsible for an activity, it is easier to debug when something goes wrong
 - E.g. let the Main singleton be responsible for instantiations, even instantiation of PowerUps that are dropped by Enemys
 
+Neither private nor public? E.g. Main.WEAP_DICT
+- This means it's protected
+
 To do / to check:
 - u curve function
 - Quaternion
@@ -85,4 +91,10 @@ To do / to check:
 - Easing
 - Expand the game further e.g.
   - experimenting with the various WeaponDefinition fields/options
+  - add level propression (hint in page 770) with timed waves within each level
+    - note that due to nested serializable classes not supported, another way to do it is using something like an XML to store the wave data
+  - experiment with other variables
+  - add more game structure and GUI (hint in Mission Demolition prototype)
+  - track high scores
+  - title screen + options for difficulty setting
 - Apply appropriate colliders to each enemy type.
