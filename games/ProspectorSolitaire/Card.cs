@@ -18,9 +18,61 @@ public class Card : MonoBehaviour {
 
 	public CardDefinition def; // Parsed from DeckXML.xml
 
+	// About Sorting Layers
+	//   This must be handled in this Card superclass as it is a general behaviour
+
+	public SpriteRenderer[] spriteRenderers;
+
+	void Start() {
+		SetSortOrder (0); // Ensures that the card starts properly depth sorted
+	}
+
+	public void PopulateSpriteRenderers() {
+		if (spriteRenderers == null || spriteRenderers.Length == 0) {
+			spriteRenderers = GetComponentsInChildren<SpriteRenderer> ();
+		}
+	}
+
+	public void SetSortingLayerName(string tSLN) {
+		PopulateSpriteRenderers ();
+
+		foreach (SpriteRenderer tSR in spriteRenderers) {
+			tSR.sortingLayerName = tSLN;
+		}
+	}
+
+	public void SetSortOrder(int sOrd) {
+		PopulateSpriteRenderers ();
+
+		foreach (SpriteRenderer tSR in spriteRenderers) {
+			if (tSR.gameObject == this.gameObject) {
+				// if true, then that gameObject is the white card background
+				tSR.sortingOrder = sOrd;
+				continue;
+			}
+
+			switch (tSR.gameObject.name) {
+			case "back":
+				// if the back is visible, it should be on top of everything else
+				tSR.sortingOrder = sOrd + 2;
+				break;
+
+			case "face":
+			default:
+				// pips, decorators, face, and so on
+				tSR.sortingOrder = sOrd + 1;
+				break;
+			}
+		}
+	}
+
 	public bool faceUp {
 		get { return !back.activeSelf; }
 		set { back.SetActive (!value); }
+	}
+
+	virtual public void OnMouseUpAsButton() {
+		print (name);
 	}
 }
 
