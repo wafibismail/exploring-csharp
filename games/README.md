@@ -305,7 +305,7 @@ Paper prototypes help in these:
 
 Digital prototypes adds the ability to see how the game feels
 
-# PAUSED AT PAGE 772 - START OF PROTOTYPE 4
+# PAUSED AT PAGE 784 - MIDDLE OF MODIFYING DECK.CS
 
 #### Other Books
 
