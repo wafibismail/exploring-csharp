@@ -13,6 +13,10 @@ public class Prospector : MonoBehaviour {
 	public float xOffset = 3;
 	public float yOffset = -2.5f;
 	public Vector3 layoutCenter;
+	public Vector2 fsPosMid = new Vector2( 0.5f, 0.90f);
+	public Vector2 fsPosRun = new Vector2( 0.5f, 0.75f);
+	public Vector2 fsPosMid2 = new Vector2( 0.4f, 1.0f);
+	public Vector2 fsPosEnd = new Vector2( 0.5f, 0.95f);
 
 	[Header("Set Dynamically")]
 	public Deck deck;
@@ -22,12 +26,15 @@ public class Prospector : MonoBehaviour {
 	public CardProspector target;
 	public List<CardProspector> tableau;
 	public List<CardProspector> discardPile;
+	public FloatingScore fsRun;
 
 	void Awake() {
 		S = this;
 	}
 
 	void Start() {
+		Scoreboard.S.score = ScoreManager.SCORE;
+
 		deck = GetComponent<Deck> (); // Get the Deck
 		deck.InitDeck (deckXML.text); // Pass the XML to it
 
@@ -212,6 +219,7 @@ public class Prospector : MonoBehaviour {
 			MoveToTarget (Draw ());
 			UpdateDrawPile ();
 			ScoreManager.EVENT (eScoreEvent.draw);
+			FloatingScoreHandler (eScoreEvent.draw);
 			break;
 
 		case eCardState.tableau:
@@ -230,6 +238,7 @@ public class Prospector : MonoBehaviour {
 			MoveToTarget (cd);
 			SetTableauFaces ();
 			ScoreManager.EVENT (eScoreEvent.mine);
+			FloatingScoreHandler (eScoreEvent.mine);
 			break;
 		}
 		CheckForGameOver ();
@@ -260,9 +269,11 @@ public class Prospector : MonoBehaviour {
 		if (won) {
 			// print ("Game Over. You won! :)");
 			ScoreManager.EVENT(eScoreEvent.gameWin);
+			FloatingScoreHandler (eScoreEvent.gameWin);
 		} else {
 			// print ("Game over. You lost. :(");
 			ScoreManager.EVENT(eScoreEvent.gameLoss);
+			FloatingScoreHandler (eScoreEvent.gameLoss);
 		}
 
 		SceneManager.LoadScene ("__Prospector_Scene_0");
@@ -283,5 +294,50 @@ public class Prospector : MonoBehaviour {
 			return (true);
 
 		return (false);
+	}
+
+	void FloatingScoreHandler(eScoreEvent evt) {
+		List<Vector2> fsPts;
+		switch (evt) {
+			// Same things need to happen whether it's a draw, a win, or a loss
+		case eScoreEvent.draw:
+		case eScoreEvent.gameWin:
+		case eScoreEvent.gameLoss:
+
+			if (fsRun != null) {
+				fsPts = new List<Vector2> ();
+				fsPts.Add (fsPosRun);
+				fsPts.Add (fsPosMid2);
+				fsPts.Add (fsPosEnd);
+				fsRun.reportFinishTo = Scoreboard.S.gameObject;
+				fsRun.Init (fsPts, 0, 1);
+
+				// Also adjust the fontSize
+				fsRun.fontSizes = new List<float> (new float[] { 28, 36, 4 });
+				fsRun = null; // Clear fsRun so it's created again
+			}
+			break;
+
+		case eScoreEvent.mine: // Remove a mine card
+			FloatingScore fs;
+			// Move the fs from the mousePosition to fsPosRun
+			Vector2 p0 = Input.mousePosition;
+			p0.x /= Screen.width;
+			p0.y /= Screen.height;
+			fsPts = new List<Vector2> ();
+			fsPts.Add (p0);
+			fsPts.Add (fsPosMid);
+			fsPts.Add (fsPosRun);
+			fs = Scoreboard.S.CreateFloatingScore (ScoreManager.CHAIN, fsPts);
+			fs.fontSizes = new List<float> (new float[] { 4, 50, 28 });
+
+			if (fsRun == null) {
+				fsRun = fs;
+				fsRun.reportFinishTo = null;
+			} else {
+				fs.reportFinishTo = fsRun.gameObject;
+			}
+			break;
+		}
 	}
 }
