@@ -18,7 +18,10 @@ public class Card : MonoBehaviour {
 
 	public CardDefinition def; // Parsed from DeckXML.xml
 
-	// Paused; Continue from page 790
+	public bool faceUp {
+		get { return !back.activeSelf; }
+		set { back.SetActive (!value); }
+	}
 }
 
 [System.Serializable]
