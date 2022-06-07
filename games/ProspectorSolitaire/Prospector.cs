@@ -97,5 +97,191 @@ public class Prospector : MonoBehaviour {
 
 			tableau.Add (cp);
 		}
+
+		// Set which cards are hiding others
+		foreach(CardProspector tCP in tableau) {
+			foreach (int hid in tCP.slotDef.hiddenBy) {
+				cp = FindCardByLayoutID (hid);
+				tCP.hiddenBy.Add (cp);
+			}
+		}
+
+		// Set up the initial target card
+		MoveToTarget (Draw ());
+
+		// Set up the Draw pile
+		UpdateDrawPile ();
+	}
+
+	CardProspector FindCardByLayoutID(int layoutID) {
+		foreach (CardProspector tCP in tableau) {
+			if (tCP.layoutID == layoutID) {
+				return (tCP);
+			}
+		}
+		return (null);
+	}
+
+	// This turns cards in the Mine face-up or face-down
+	void SetTableauFaces() {
+		foreach (CardProspector cd in tableau) {
+			bool faceUp = true;
+			foreach (CardProspector cover in cd.hiddenBy) {
+				// If either of the cards are in the tableau
+				if (cover.state == eCardState.tableau) {
+					faceUp = false;
+				}
+
+			}
+			cd.faceUp = faceUp;
+		}
+	}
+
+	void MoveToDiscard(CardProspector cd) {
+		cd.state = eCardState.discard;
+		discardPile.Add (cd);
+		cd.transform.parent = layoutAnchor;
+
+		// Position it on the discard pile
+		cd.transform.localPosition = new Vector3 (
+			layout.multiplier.x * layout.discardPile.x,
+			layout.multiplier.y * layout.discardPile.y,
+			-layout.discardPile.layerID + 0.5f
+		);
+		cd.faceUp = true;
+
+		// Place it on top of the pile for depth sorting
+		cd.SetSortingLayerName(layout.discardPile.layerName);
+		cd.SetSortOrder (-100 + discardPile.Count);
+	}
+
+	void MoveToTarget(CardProspector cd) {
+		if (target != null)
+			MoveToDiscard (target);
+		target = cd;
+
+		cd.state = eCardState.target;
+		cd.transform.parent = layoutAnchor;
+
+		cd.transform.localPosition = new Vector3 (
+			layout.multiplier.x * layout.discardPile.x,
+			layout.multiplier.y * layout.discardPile.y,
+			-layout.discardPile.layerID
+		);
+
+		cd.faceUp = true;
+
+		cd.SetSortingLayerName (layout.discardPile.layerName);
+		cd.SetSortOrder (0);
+	}
+
+	// Arranges all cards of the drawPile to show how many are left
+	void UpdateDrawPile() {
+		CardProspector cd;
+
+		for (int i = 0; i < drawPile.Count; i++) {
+			cd = drawPile [i];
+			cd.transform.parent = layoutAnchor;
+
+			// Position it correctly with the layout.drawPile.stagger
+			Vector2 dpStagger = layout.drawPile.stagger;
+			cd.transform.localPosition = new Vector3 (
+				layout.multiplier.x * (layout.drawPile.x + i * dpStagger.x),
+				layout.multiplier.y * (layout.drawPile.y + i * dpStagger.y),
+				-layout.drawPile.layerID + 0.1f * i
+			);
+
+			cd.faceUp = false;
+			cd.state = eCardState.drawPile;
+
+			// Set depth sorting
+			cd.SetSortingLayerName (layout.drawPile.layerName);
+			cd.SetSortOrder (-10 * i);
+		}
+	}
+
+	public void CardClicked(CardProspector cd) {
+
+		switch (cd.state) {
+		case eCardState.target:
+			// Nothing happens
+			break;
+		case eCardState.drawPile:
+			// Draw the next card on clicking any card from the drawPile
+			MoveToDiscard (target);
+			MoveToTarget (Draw ());
+			UpdateDrawPile ();
+			ScoreManager.EVENT (eScoreEvent.draw);
+			break;
+
+		case eCardState.tableau:
+			// Check if it's a valid play
+			bool validMatch = true;
+			if (!cd.faceUp) {
+				validMatch = false;
+			}
+			if (!AdjacentRank (cd, target)) {
+				validMatch = false;
+			}
+			if (!validMatch)
+				return;
+
+			tableau.Remove (cd);
+			MoveToTarget (cd);
+			SetTableauFaces ();
+			ScoreManager.EVENT (eScoreEvent.mine);
+			break;
+		}
+		CheckForGameOver ();
+	}
+
+	void CheckForGameOver() {
+		if (tableau.Count == 0) {
+			GameOver (true); // win
+			return;
+		}
+
+		// drawPile still has cards
+		if (drawPile.Count > 0) {
+			return;
+		}
+
+		// validplay still possible
+		foreach (CardProspector cd in tableau) {
+			if (AdjacentRank (cd, target)) {
+				return;
+			}
+		}
+
+		GameOver (false); // lose
+	}
+
+	void GameOver(bool won) {
+		if (won) {
+			// print ("Game Over. You won! :)");
+			ScoreManager.EVENT(eScoreEvent.gameWin);
+		} else {
+			// print ("Game over. You lost. :(");
+			ScoreManager.EVENT(eScoreEvent.gameLoss);
+		}
+
+		SceneManager.LoadScene ("__Prospector_Scene_0");
+	}
+
+	public bool AdjacentRank(CardProspector c0, CardProspector c1) {
+		if (!c0.faceUp || !c1.faceUp)
+			return (false);
+
+		if (Mathf.Abs (c0.rank - c1.rank) == 1) {
+			return (true);
+		}
+
+		if (c0.rank == 1 && c1.rank == 13)
+			return (true);
+
+		if (c0.rank == 13 && c1.rank == 1)
+			return (true);
+
+		return (false);
 	}
 }

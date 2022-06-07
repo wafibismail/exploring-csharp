@@ -38,3 +38,11 @@ Note on implementing game logic
   - which are passive e.g. flipping cards that are no longer hidden
   - which are active e.g. moved by players
   - etc.
+
+Note on ScoreManager
+- In the book's first edition, the author actually implemented ScoreManager as a method of Prospector rather than a separate class.
+- However, by adopting the software pattern, ScoreManager, being a class of its own, is made to something that could be reused in the future.
+  - In addition, the decision leads to a simpler code.
+
+To do/check later:
+- implement scoring system that doubles scores in runs that have gold cards

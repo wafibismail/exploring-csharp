@@ -305,7 +305,7 @@ Paper prototypes help in these:
 
 Digital prototypes adds the ability to see how the game feels
 
-# PAUSED AT PAGE 816 - START OF IMPLEMENTING MOUSECLICKS, PROSPECTOR CODE
+# PAUSED AT PAGE 829 - IMPLEMENTING FLOATING SCORE IN PROSPECTOR SOLITAIRE
 
 #### Other Books
 
