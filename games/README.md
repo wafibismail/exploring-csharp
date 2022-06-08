@@ -305,7 +305,7 @@ Paper prototypes help in these:
 
 Digital prototypes adds the ability to see how the game feels
 
-# PAUSED AT PAGE 848 - BEGINNING OF BARTOK
+# PAUSED AT PAGE 862 - BartokLayout class definition
 
 #### Other Books
 
