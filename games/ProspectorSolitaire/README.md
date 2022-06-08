@@ -46,3 +46,8 @@ Note on ScoreManager
 
 To do/check later:
 - implement scoring system that doubles scores in runs that have gold cards
+  - refer to page 846
+- compile the game e.g. on a mobile device
+- Unity Cloud build
+- Unity Collaborate code repository
+- artists and assets used in building this prototype @ end of chapter 32, page 847
