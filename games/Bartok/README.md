@@ -13,3 +13,12 @@ SlotDef
         - Prospector
         - ProspectorCard
     - comment out the SlotDef class definition
+
+LINQ queries:
+- work on arrays of values
+- can be a bit slow,
+  - may be best to restrict its usage where it's only called once e.g.
+    - when a human player gets a card added to his/her hand
+
+To do/check:
+- more on LINQ queries
