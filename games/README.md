@@ -305,7 +305,7 @@ Paper prototypes help in these:
 
 Digital prototypes adds the ability to see how the game feels
 
-# PAUSED AT PAGE 876 - Managing 2D Depth-Sorting Order (in regard to moving cards) in BARTOK
+# PAUSED AT PAGE 895 - BARTOK - BUILDING FOR WEBGL
 
 #### Other Books
 

@@ -29,9 +29,12 @@ public class CardBartok : Card {
 	public List<Vector3> bezierPts;
 	public List<Quaternion> bezierRots;
 	public float timeStart, timeDuration;
-
+	public int eventualSortOrder;
+	public string eventualSortLayer;
 	// When the card is done moving, it will call reportFinishTo
 	public GameObject reportFinishTo = null;
+	[System.NonSerialized]
+	public Player callbackPlayer = null;
 
 	// MoveTo tells the card to interpolate to a new position and rotation
 	public void MoveTo(Vector3 ePos, Quaternion eRot) {
@@ -98,6 +101,10 @@ public class CardBartok : Card {
 				if (reportFinishTo != null) {
 					reportFinishTo.SendMessage ("CBCallback", this);
 					reportFinishTo = null; // prevent reporting to the same GO
+				} else if (callbackPlayer != null) {
+					// then call CBCallback directly on this player
+					callbackPlayer.CBCallback(this);
+					callbackPlayer = null;
 				} else { // If there is nothing to callback
 					// Just let it stay still.
 				}
@@ -106,8 +113,32 @@ public class CardBartok : Card {
 				transform.localPosition = pos;
 				Quaternion rotQ = Utils.Bezier (uC, bezierRots);
 				transform.rotation = rotQ;
+
+				if (u > 0.5f) {
+					// When the move is halfway done (i.e. u>0.5f)
+					//   the Card jumps to the eventualSortOrder
+					//   and the eventualSortLayer
+
+					SpriteRenderer sRend = spriteRenderers [0];
+					if (sRend.sortingOrder != eventualSortOrder) {
+						// Jump to the proper sort order
+						SetSortOrder(eventualSortOrder);
+					}
+					if (sRend.sortingLayerName != eventualSortLayer) {
+						// Jump to the proper sort layer
+						SetSortingLayerName(eventualSortLayer);
+					}
+				}
 			}
 			break;
 		}
+	}
+
+	// This allows the card to react to being clicked
+	override public void OnMouseUpAsButton() {
+		// Call the CardClicked method on the Bartok singleton
+		Bartok.S.CardClicked(this);
+		// Also call the base class (Card.cs) version of this method
+		base.OnMouseUpAsButton();
 	}
 }

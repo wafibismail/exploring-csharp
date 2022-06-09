@@ -20,5 +20,12 @@ LINQ queries:
   - may be best to restrict its usage where it's only called once e.g.
     - when a human player gets a card added to his/her hand
 
+Utils.tr():
+- tr is short for trace
+- takes any number of arguments (via the params keyword), concatenates them with tabs in between, and outputs them to the Console pane
+
+In cases where public variables should not be set to anything non null, it is important to precede the declaration with [System.NonSerialized] so that the Inspector will NOT set it with an initial variable as it would otherwise have done
+- .
+
 To do/check:
 - more on LINQ queries
