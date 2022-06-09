@@ -305,7 +305,7 @@ Paper prototypes help in these:
 
 Digital prototypes adds the ability to see how the game feels
 
-# PAUSED AT PAGE 899 - STARTING CHAPTER 34 - PROTOTYPE 6 - WORD GAME
+# PAUSED AT PAGE 910 - WORD GAME - SETTING UP THE GAME
 
 #### Other Books
 
