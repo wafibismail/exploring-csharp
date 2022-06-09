@@ -75,6 +75,10 @@ public class BartokLayout : MonoBehaviour {
 				drawPile = tSD;
 				break;
 
+			case "discardpile":
+				discardPile = tSD;
+				break;
+
 			case "target":
 				target = tSD;
 				break;

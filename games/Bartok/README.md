@@ -29,3 +29,4 @@ In cases where public variables should not be set to anything non null, it is im
 
 To do/check:
 - more on LINQ queries
+- add more optional rules for the game!
