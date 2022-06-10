@@ -100,6 +100,10 @@ public class WordList : MonoBehaviour {
 		return(S.longWords);
 	}
 
+	static public string GET_LONG_WORD(int ndx) {
+		return(S.longWords[ndx]);
+	}
+
 	static public int WORD_COUNT {
 		get { return S.wordCount; }
 	}

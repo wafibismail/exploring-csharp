@@ -51,8 +51,11 @@ public class WordLevel {
 					// ... then return false
 					return (false);
 				}
+			} else {
+				// The char c isn't in level.word, so return false
+				return (false);
 			}
-			return(true);
 		}
+		return(true);
 	}
 }

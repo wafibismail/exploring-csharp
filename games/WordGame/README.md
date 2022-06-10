@@ -27,3 +27,11 @@ Unity Profiler
   - drag the mouse along the graph in CPU Usage to see how much processing time is taken by a function or background process
     - can also use search field
 - more useful info in Unity documentation
+
+Backface culling -
+- is a rendering optimizaition where polygons are only rendered if they are viewed from the correct side e.g. from the outside of a sphere
+- some shaders (including ProtoTools UnlitAlpha) do not use backface culling
+
+To do/check later:
+- Read on [LINQ](https://web.archive.org/web/20140209060811/http://unitygems.com/linq-1-
+time-linq/)

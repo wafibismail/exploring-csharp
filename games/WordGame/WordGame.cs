@@ -16,7 +16,7 @@ public class WordGame : MonoBehaviour {
 
 	[Header("Set Dynamically")]
 	public GameMode mode = GameMode.preGame;
-	public WordGame currLevel;
+	public WordLevel currLevel;
 
 	void Awake() {
 		S = this;
@@ -45,7 +45,7 @@ public class WordGame : MonoBehaviour {
 			// This will be added later in the chapter
 		}
 		level.levelNum = levelNum;
-		level.word = WordList.GET_LONG_WORDS (level.longWordIndex);
+		level.word = WordList.GET_LONG_WORD (level.longWordIndex);
 		level.charDict = WordLevel.MakeCharDict (level.word);
 
 		StartCoroutine (FindSubWordsCoroutine (level));
@@ -58,6 +58,8 @@ public class WordGame : MonoBehaviour {
 		level.subWords = new List<string> ();
 		string str;
 
+		// Note Lists are passed by reference
+		//   This makes this functionality relatively very fast
 		List<string> words = WordList.GET_WORDS ();
 
 		// Iterate through all the words in the wordList
@@ -74,7 +76,7 @@ public class WordGame : MonoBehaviour {
 			}
 		}
 
-		level.subWords.Sort ();
+		level.subWords.Sort (); // <- Alphabetically
 		level.subWords = SortWordsByLength (level.subWords).ToList ();
 
 		// The coroutine is complete, so call SubWordSearchComplete()
