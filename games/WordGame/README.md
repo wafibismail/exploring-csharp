@@ -35,3 +35,5 @@ Backface culling -
 To do/check later:
 - Read on [LINQ](https://web.archive.org/web/20140209060811/http://unitygems.com/linq-1-
 time-linq/)
+- Add code to handle game phases and transitions among them (Page 941 for hint)
+- Add code to handle potential levels with too many or too few subWords

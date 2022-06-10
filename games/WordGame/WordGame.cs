@@ -23,6 +23,7 @@ public class WordGame : MonoBehaviour {
 	public Color bigColorDim = new Color (0.8f, 0.8f, 0.8f);
 	public Color bigColorSelected = new Color (1f, 0.9f, 0.7f);
 	public Vector3 bigLetterCenter = new Vector3(0, -16, 0);
+	public Color[] wyrdPalette;
 
 	[Header("Set Dynamically")]
 	public GameMode mode = GameMode.preGame;
@@ -153,7 +154,12 @@ public class WordGame : MonoBehaviour {
 				// The % here makes multiple columns line up
 				pos.y -= (i%numRows)*letterSize;
 
+				// Move the lett immediately to a position above the screen
+				lett.posImmediate = pos + Vector3.up*(20+i%numRows);
+				// Then set the pos for it to interpolate to
 				lett.pos = pos;
+				// Increment lett.timeStart to move wyrds at different times
+				lett.timeStart = Time.time + i * 0.05f;
 
 				go.transform.localScale = Vector3.one * letterSize;
 
@@ -163,6 +169,9 @@ public class WordGame : MonoBehaviour {
 
 			if (showAllWyrds)
 				wyrd.visible = true;
+
+			// Color the wyrd based on length
+			wyrd.color= wyrdPalette[word.Length - WordList.WORD_LENGTH_MIN];
 
 			wyrds.Add (wyrd);
 
@@ -189,7 +198,12 @@ public class WordGame : MonoBehaviour {
 
 			// Set the initial position of the big letters below screen
 			pos = new Vector3(0, -100, 0);
+
+			lett.posImmediate = pos;
 			lett.pos = pos; // You'll add more code around this line later
+			// Increment lett.timeStart to have big Letters come in last
+			lett.timeStart = Time.time + currLevel.subWords.Count*0.05f;
+			lett.easingCuve = Easing.Sin + "-0.18"; // Bouncy easing
 
 			col = bigColorDim;
 			lett.color = col;
@@ -338,6 +352,7 @@ public class WordGame : MonoBehaviour {
 			// Check whether this subWord is the testWord or is contained in it
 			if (string.Equals (testWord, subWord)) {
 				HighlightWyrd (i);
+				ScoreManager.SCORE (wyrds [i], 1); // Score the testWord
 				foundTestWord = true;
 			} else if (testWord.Contains (subWord)) {
 				containedWords.Add (i);
@@ -352,6 +367,8 @@ public class WordGame : MonoBehaviour {
 			for (int i= 0; i < containedWords.Count; i++) {
 				ndx = numContained - i - 1;
 				HighlightWyrd (containedWords[ndx]);
+				ScoreManager.SCORE(wyrds[containedWords[ndx]], i+2);
+				// ^ i+2 is the number of this smaller word in the combo
 			}
 		}
 
