@@ -28,11 +28,15 @@ public class WordList : MonoBehaviour {
 		S = this; // Set up the WordList Singleton
 	}
 
-	void Start() {
+	public void Init() {
 		lines = wordListText.text.Split ('\n');
 		totalLines = lines.Length;
 
 		StartCoroutine (ParseLines ());
+	}
+
+	static public void INIT() {
+		S.Init ();
 	}
 
 	// All coroutines have IEnumerator as their return type.
@@ -72,6 +76,11 @@ public class WordList : MonoBehaviour {
 
 		longWordCount = longWords.Count;
 		wordCount = words.Count;
+
+		// Send a message to this gameObject to let it know the parse is done
+		gameObject.SendMessage("WordListParseComplete");
+		// This command calls a WordListParseComplete() on any script attached
+		//   to this gameObject
 
 		// Parsing the WHOLE list here means that the player only has to wait
 		//   once, and is then able to play many rounds in a row with many
