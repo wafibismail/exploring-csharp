@@ -305,7 +305,7 @@ Paper prototypes help in these:
 
 Digital prototypes adds the ability to see how the game feels
 
-# PAUSED AT PAGE 983 - FINAL PROTOTYPE - PER-TILE COLLISION
+# PAUSED AT PAGE 987 - FINAL PROTOTYPE - THE IFACINGMOVER INTERFACE
 
 #### Other Books
 
