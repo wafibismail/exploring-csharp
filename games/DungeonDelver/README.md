@@ -36,3 +36,8 @@ Interfaces vs Superclasses
 - Interfaces can be thought of as promises
   - Any class that implements the interface promises to have specific methods or properties that can be called safely
   - Interface names often start with an I e.g. IFacingMover
+
+OnTriggerEnter() vs OnCollisionEnter()
+- Passed objects:
+  - OnTriggerEnter - a Collider
+  - OnCollisionEnter - a Collision
