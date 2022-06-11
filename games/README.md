@@ -305,7 +305,7 @@ Paper prototypes help in these:
 
 Digital prototypes adds the ability to see how the game feels
 
-# PAUSED AT PAGE 987 - FINAL PROTOTYPE - THE IFACINGMOVER INTERFACE
+# PAUSED AT PAGE 999 - FINAL PROTOTYPE - THE IKEYMASTER INTERFACE
 
 #### Other Books
 

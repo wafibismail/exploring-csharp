@@ -28,3 +28,11 @@ LateUpdate()
 
 Mathf.Clamp(val, min, max)
 - ensures that val is between the min and max args
+
+Interfaces vs Superclasses
+- A class may implement several different interfaces simultaneously
+- A class can only extend a single superclass
+- Any class, regardless of superclass ancestry, can implement the same interface
+- Interfaces can be thought of as promises
+  - Any class that implements the interface promises to have specific methods or properties that can be called safely
+  - Interface names often start with an I e.g. IFacingMover
