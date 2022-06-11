@@ -23,7 +23,9 @@ public class Tile : MonoBehaviour {
 		// D3 means decimal (base-ten) with at least 3 characters e.g. 005
 
 		if (eTileNum == -1) {
-			eTileNum = TileCamera.GET_MAP (x, y);
+			eTileNum = TileCamera.GET_MAP (x, y); // or = TileCamera.MAP[x, y];
+		} else {
+			TileCamera.SET_MAP (x, y, eTileNum);
 		}
 		tileNum = eTileNum;
 		GetComponent<SpriteRenderer> ().sprite = TileCamera.SPRITES [tileNum];

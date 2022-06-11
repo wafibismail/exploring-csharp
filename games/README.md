@@ -305,7 +305,7 @@ Paper prototypes help in these:
 
 Digital prototypes adds the ability to see how the game feels
 
-# PAUSED AT PAGE 999 - FINAL PROTOTYPE - THE IKEYMASTER INTERFACE
+# PAUSED AT PAGE 1004 - FINAL PROTOTYPE - GUI: KEY COUNT AND HEALTH
 
 #### Other Books
 

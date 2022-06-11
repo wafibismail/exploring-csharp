@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dray : MonoBehaviour, IFacingMover {
+public class Dray : MonoBehaviour, IFacingMover, IKeyMaster {
 
 	public enum eMode { idle, move, attack, transition }
 	[Header("Set in Inspector")]
@@ -15,6 +15,7 @@ public class Dray : MonoBehaviour, IFacingMover {
 	public int dirHeld = -1; // Direction of the held movement key
 	public int facing = 1; // Direction Dray is facing
 	public eMode mode = eMode.idle;
+	public int numKeys = 0;
 
 	private float timeAtkDone = 0; // Time at which the attack animation should be done
 	private float timeAtkNext = 0; // Time at which Dray will be able to attack again
@@ -181,5 +182,11 @@ public class Dray : MonoBehaviour, IFacingMover {
 
 	public Vector2 GetRoomPosOnGrid(float mult = -1) {
 		return inRm.GetRoomPosOnGrid (mult);
+	}
+
+	// Implementations of IKeyMaster
+	public int keyCount {
+		get { return numKeys; }
+		set { numKeys = value; }
 	}
 }
