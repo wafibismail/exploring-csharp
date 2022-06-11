@@ -22,7 +22,10 @@ public class Dray : MonoBehaviour, IFacingMover, IKeyMaster {
 	public eMode mode = eMode.idle;
 	public int numKeys = 0;
 	public bool invincible = false;
-	// why not eMode? having it as bool allows other eModes to happen as well
+	// ^why not eMode? having it as bool allows other eModes to happen as well
+	public bool hasGrappler = false;
+	public Vector3 lastSafeLoc;
+	public int lastSafeFacing;
 
 	[SerializeField]
 	private int _health;
@@ -57,6 +60,8 @@ public class Dray : MonoBehaviour, IFacingMover, IKeyMaster {
 		anim = GetComponent<Animator> ();
 		inRm = GetComponent<InRoom> ();
 		health = maxHealth;
+		lastSafeLoc = transform.position;
+		lastSafeFacing = facing;
 	}
 
 	void Update() {
@@ -177,6 +182,8 @@ public class Dray : MonoBehaviour, IFacingMover, IKeyMaster {
 				// Switch position to the opposite end of the door entered
 				transitionPos = InRoom.DOORS [(doorNum + 2) % 4];
 				roomPos = transitionPos;
+				lastSafeLoc = transform.position;
+				lastSafeFacing = facing;
 				mode = eMode.transition;
 				transitionDone = Time.time + transitionDelay;
 			}
@@ -230,9 +237,22 @@ public class Dray : MonoBehaviour, IFacingMover, IKeyMaster {
 		case PickUp.eType.key:
 			keyCount++;
 			break;
+
+		case PickUp.eType.grappler:
+			hasGrappler = true;
+			break;
 		}
 
 		Destroy (colld.gameObject);
+	}
+
+	public void ResetInRoom(int healthLoss = 0) {
+		transform.position = lastSafeLoc;
+		facing = lastSafeFacing;
+		health -= healthLoss;
+
+		invincible = true; // Make Dray invincible
+		invincibleDone = Time.time + invincibleDuration;
 	}
 
 	// Implementation of IFacingMover

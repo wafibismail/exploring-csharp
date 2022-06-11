@@ -305,7 +305,7 @@ Paper prototypes help in these:
 
 Digital prototypes adds the ability to see how the game feels
 
-# PAUSED AT PAGE 1018 - FINAL PROTOTYPE - DROPPING RANDOMIZED ITEMS
+# PAUSED AT PAGE 1028 - FINAL PROTOTYPE - ADDING DAMAGE TO THE GRAPPLER
 
 #### Other Books
 
