@@ -14,16 +14,16 @@ public class GateKeeper : MonoBehaviour {
 	const int lockedUR = 81;
 	const int lockedUL = 80;
 	const int lockedL = 100;
-	const int lockedDR = 101;
-	const int lockedDL = 102;
+	const int lockedDL = 101;
+	const int lockedDR = 102;
 
 	// OPEN DOOR tileNums
 	const int openR = 48;
 	const int openUR = 93;
 	const int openUL = 92;
 	const int openL = 51;
-	const int openDR = 26;
-	const int openDL = 27;
+	const int openDL = 26;
+	const int openDR = 27;
 
 	private IKeyMaster keys;
 

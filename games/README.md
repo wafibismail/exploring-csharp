@@ -305,8 +305,6 @@ Paper prototypes help in these:
 
 Digital prototypes adds the ability to see how the game feels
 
-# PAUSED AT PAGE 1028 - FINAL PROTOTYPE - ADDING DAMAGE TO THE GRAPPLER
-
 #### Other Books
 
 The [author](#introduction-to-game-design-prototyping-and-development) also noted several other books recommended books (refer to PREFACE for the explanation):
