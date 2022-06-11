@@ -9,3 +9,22 @@ Anti-aliasing works well with 3D graphics
     - disable anti-aliasing at Edit > Project Settings > Quality
     - alternatively, for selectively turning off on individual cameras
       - select the camera, set *Allow MSAA (MultiSample Anti-Aliasing)* to false
+
+Sorting Layers:
+- Sprite Renderers have a separate sorting layer from Physics
+
+animator.CrossFade(string stateName, float normalizedTransitionDuration)
+- self explanatory
+- in the case of Dray's animation,
+  - stateName could be one of the animations I created in the _Animation folder, e.g. Dray_Walk_0
+  - normalizedTransitionDuration can be 0 for instant transition
+
+Metrics
+- 1 Unity unit = 1 meter = 1 tile in this prototype
+
+LateUpdate()
+- called after Update()
+- useful for cleanup operations e.g. returning wandering characters to the room they are supposed to be in
+
+Mathf.Clamp(val, min, max)
+- ensures that val is between the min and max args

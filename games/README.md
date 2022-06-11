@@ -305,7 +305,7 @@ Paper prototypes help in these:
 
 Digital prototypes adds the ability to see how the game feels
 
-# PAUSED AT PAGE 965 - FINAL PROTOTYPE - SPRITE LAYERING
+# PAUSED AT PAGE 983 - FINAL PROTOTYPE - PER-TILE COLLISION
 
 #### Other Books
 
